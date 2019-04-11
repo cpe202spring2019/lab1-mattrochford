@@ -36,10 +36,10 @@ class TestLab1(unittest.TestCase):
         with self.assertRaises(ValueError): # Check for none exception
             bin_search(44,0,12,None)   
 
-    def test7_bin_search(self):
-        tlist = [23,45,46,56,68,76,88,90,111,None,435,4355,9009]
-        with self.assertRaises(ValueError): # Check for none exception
-            bin_search(23,0,len(tlist)-1,tlist)  
+    # def test7_bin_search(self):
+    #     tlist = [23,45,46,56,68,76,88,90,111,None,435,4355,9009]
+    #     with self.assertRaises(ValueError): # Check for none exception
+    #         bin_search(23,0,len(tlist)-1,tlist)  
 
     def test8_bin_search(self):
         tlist = [23,45,46,56,68,76,88,90,111,435,4355,9009]
@@ -51,7 +51,19 @@ class TestLab1(unittest.TestCase):
 
     def test10_bin_search(self):
         tlist = [1,2,3,4]
-        self.assertEqual(bin_search(1,0,5,tlist),0)
+        self.assertEqual(bin_search(1,0,5,tlist),0) #
+
+    def test11_bin_search(self):
+        tlist = [1,2,3,4,5]
+        self.assertEqual(bin_search(3,1,1,tlist),None) # Check overlapping range
+
+    def test12_bin_search(self):
+        tlist = [34]
+        self.assertEqual(bin_search(34,0,1,tlist),0) # Test list of length 1
+
+    def test13_bin_search(self):
+        tlist = [1,2,3,4]
+        self.assertEqual(bin_search(6,14,-3,tlist),None)
 
     # max_list_iter test cases
 

@@ -40,22 +40,22 @@ def bin_search(target, low, high, int_list):  # must use recursion
     
     if int_list == None: # Check for None list
         raise ValueError('List is None')  
-    else:
-        for i in int_list:
-            if i == None: # Check for list with None
-                raise ValueError('List contains None element')   
+    # else:
+    #     for i in int_list:
+    #         if i == None: # Check for list with None
+    #             raise ValueError('List contains None element')   
 
-    if low < 0: low = 0 # Make sure low value is in range
+    if low < 0 or low > len(int_list)-1: low = 0 # Make sure low value is in range
         
-    if high > len(int_list)-1: high = len(int_list)-1 # Make sure high value is in range
+    if high > len(int_list)-1 or high < 0: high = len(int_list)-1 # Make sure high value is in range
 
 
     middle = (high+low)//2 # Find middle index
 
     if (high-low)//2 == 0: # Check if list only has one number left
-        if target == int_list[high]:
+        if target == int_list[high]: # If last value in list matches target
             return high
-        if target != int_list[middle]: # If last number doesnt match return None
+        elif target != int_list[low]: # If last number doesnt match return None
             return None
 
     if target == int_list[middle]: # If target matches middle number
