@@ -43,7 +43,15 @@ class TestLab1(unittest.TestCase):
 
     def test8_bin_search(self):
         tlist = [23,45,46,56,68,76,88,90,111,435,4355,9009]
-        self.assertEqual(bin_search(9009,0,len(tlist)-1,tlist),11) # Test search for first location
+        self.assertEqual(bin_search(9009,0,len(tlist)-1,tlist),11) # Test search for last location
+
+    def test9_bin_search(self):
+        tlist = [1,2,3,4]
+        self.assertEqual(bin_search(1,-12,3,tlist),0)
+
+    def test10_bin_search(self):
+        tlist = [1,2,3,4]
+        self.assertEqual(bin_search(1,0,5,tlist),0)
 
     # max_list_iter test cases
 

@@ -38,12 +38,17 @@ def bin_search(target, low, high, int_list):  # must use recursion
     If target is not found returns None. If list is None, raises ValueError """
 
     
-    if int_list == None:
-        raise ValueError('List contains None element')  
+    if int_list == None: # Check for None list
+        raise ValueError('List is None')  
     else:
         for i in int_list:
-            if i == None: # Check for None list
+            if i == None: # Check for list with None
                 raise ValueError('List contains None element')   
+
+    if low < 0: low = 0 # Make sure low value is in range
+        
+    if high > len(int_list)-1: high = len(int_list)-1 # Make sure high value is in range
+
 
     middle = (high+low)//2 # Find middle index
 
