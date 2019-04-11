@@ -48,6 +48,8 @@ def bin_search(target, low, high, int_list):  # must use recursion
     middle = (high+low)//2 # Find middle index
 
     if (high-low)//2 == 0: # Check if list only has one number left
+        if target == int_list[high]:
+            return high
         if target != int_list[middle]: # If last number doesnt match return None
             return None
 
