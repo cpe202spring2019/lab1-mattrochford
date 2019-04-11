@@ -9,7 +9,7 @@ class Location:
 
     # Equal comparison function
     def __eq__(self,other):
-        return((self.lat == other.lat) & (self.lon == other.lon))
+        return((self.lat == other.lat) & (self.lon == other.lon) & (self.name == other.name))
 
     # Printing function
     def __repr__(self):
